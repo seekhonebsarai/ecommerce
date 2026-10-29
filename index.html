@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Kharid | Shop Groceries & Occasion Gifts for Family in Afghanistan</title>
+  <meta name="description"
+    content="Kharid is the shopping app for Afghans abroad. Send groceries, gifts, care packages, and mobile top-ups to family in Kabul, Mazar-i-Sharif, Herat, Jalalabad, and Panjshir. Free city delivery with photo proof on every doorstep.">
+  <meta name="keywords"
+    content="Afghanistan shopping, send groceries to Afghanistan, afghan diaspora app, kabul grocery delivery, mobile top up afghanistan, awcc recharge, roshan recharge, eid gifts afghanistan">
+  <meta name="theme-color" content="#1B6B4A">
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Kharid | Send Groceries & Gifts to Family in Afghanistan">
+  <meta property="og:description"
+    content="Shop from anywhere. Delivered same-day to family in Kabul, Mazar, Herat & Jalalabad. Photo proof on every delivery.">
+  <meta property="og:image" content="/images/hero-courier.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Plus Jakarta Sans for Latin, Vazirmatn for Dari & Pashto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/animations.css">
+
+  <!-- JSON-LD Structured Data for E-Commerce & Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kharid",
+    "url": "https://www.kharid.af",
+    "logo": "https://www.kharid.af/icon-512.png",
+    "description": "Send groceries, gifts, and mobile top-ups to family inside Afghanistan with same-day delivery and doorstep photo proof.",
+    "areaServed": [
+      { "@type": "City", "name": "Kabul" },
+      { "@type": "City", "name": "Mazar-i-Sharif" },
+      { "@type": "City", "name": "Herat" },
+      { "@type": "City", "name": "Jalalabad" },
+      { "@type": "City", "name": "Panjshir" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement" id="top-announcement">
+    <span class="pulse-dot"></span>
+    <span id="announcement-text">Same-day delivery active in Kabul, Mazar-i-Sharif, Herat, Jalalabad & Panjshir. Free
+      city center delivery with photo proof!</span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="#home" class="brand-logo" aria-label="Kharid Home">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <span>Kharid</span>
+          <span class="brand-tag">AFGHANISTAN</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#packages" class="nav-link">Packages</a>
+          <a href="#cities" class="nav-link">Delivery Cities</a>
+          <a href="#topup" class="nav-link">Mobile Top-Up</a>
+          <a href="#custom-builder" class="nav-link">Custom Box</a>
+          <a href="#photo-proof" class="nav-link">Photo Proof</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+
+        <!-- Right Controls: Currency, Language, Theme, Tracking, Cart -->
+        <div class="nav-actions">
+          <!-- Currency Dropdown -->
+          <select id="currency-select" class="dropdown-select" aria-label="Select Currency">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="CAD">CAD ($)</option>
+            <option value="AFN">AFN (؋)</option>
+          </select>
+
+          <!-- Language Dropdown -->
+          <select id="lang-select" class="dropdown-select" aria-label="Select Language">
+            <option value="en">English (EN)</option>
+            <option value="fa">فارسی (FA)</option>
+            <option value="pa">پښتو (PA)</option>
+          </select>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- Track Order Button -->
+          <button class="btn btn-outline btn-sm open-tracking-btn" aria-label="Track Order">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            <span class="hide-mobile">Track</span>
+          </button>
+
+          <!-- Cart Button -->
+          <button id="cart-btn" class="cart-btn" aria-label="Open Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="hide-mobile">Cart</span>
+            <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill-badge">
+            <span class="stars">★★★★★</span>
+            <span>4.9/5 • 2,500+ Afghan Diaspora Families Trust Kharid</span>
+          </div>
+          <h1 class="hero-title">
+            <span data-i18n="heroTitle">Shop from anywhere. Delivered same-day</span>
+            <span class="highlight" data-i18n="heroHighlight">to family in Afghanistan.</span>
+          </h1>
+          <p class="hero-desc" data-i18n="heroSubtitle">
+            Groceries, occasion gifts, and instant mobile top-ups. Free city delivery with a real photo sent to your
+            phone the moment it arrives at your family's doorstep.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#packages" class="btn btn-primary btn-lg" data-i18n="exploreBoxes">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+              </svg>
+              Shop Grocery Packages
+            </a>
+            <a href="#topup" class="btn btn-secondary btn-lg" data-i18n="sendTopup">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              Instant Mobile Top-Up
+            </a>
+            <button class="btn btn-outline btn-lg open-tracking-btn" data-i18n="trackOrder">
+              Track Order
+            </button>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="hero-trust-row">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Free Delivery in 5 Cities</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span>Doorstep Photo Verification</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              <span>All Bank Cards & Apple Pay</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+          <!-- Top Floating Card -->
+          <div class="floating-badge badge-top">
+            <div class="badge-icon-box">⚡</div>
+            <div>
+              <div class="badge-text-primary">Kabul Express Courier</div>
+              <div class="badge-text-secondary">Delivered in 1h 45m</div>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <img src="/images/hero-courier.jpg" alt="A friendly Kharid courier holding an essentials package in Kabul"
+              loading="eager">
+          </div>
+
+          <!-- Bottom Floating Card -->
+          <div class="floating-badge badge-bottom">
+            <div class="badge-icon-box">📸</div>
+            <div>
+              <div class="badge-text-primary">100% Photo Proof Included</div>
+              <div class="badge-text-secondary">Sent straight to your WhatsApp & phone</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Pillars Section -->
+  <section class="section section-alt" id="pillars">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag">Why Afghans Abroad Choose Kharid</span>
+        <h2 class="section-title">Four reasons your family will feel the difference</h2>
+        <p class="section-subtitle">We built Kharid to fix what other services get wrong: hidden fees, agonizing delays,
+          and silence after you pay.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <article class="pillar-card highlighted">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">Free Delivery. Always.</h3>
+            <p class="pillar-desc">No hidden fuel fees, no packing surcharge, no surprises at checkout. The price you
+              see is the final price delivered to city centers.</p>
+          </div>
+          <div class="pillar-footer">Every Order • Every City We Serve</div>
+        </article>
+
+        <!-- Pillar 2 -->
+        <article class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">Ordered Today. Delivered Today.</h3>
+            <p class="pillar-desc">Orders placed before 2:00 PM local time are dispatched and delivered same-day in
+              Kabul, Mazar-i-Sharif, Herat and Jalalabad.</p>
+          </div>
+          <div class="pillar-footer">Hours, not weeks.</div>
+        </article>
+
+        <!-- Pillar 3 -->
+        <article class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">You Will See It Arrive.</h3>
+            <p class="pillar-desc">Every delivery concludes with an authentic photo of your family receiving the box,
+              sent instantly to your WhatsApp & dashboard.</p>
+          </div>
+          <div class="pillar-footer">Trust needs evidence, not promises.</div>
+        </article>
+
+        <!-- Pillar 4 -->
+        <article class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="pillar-title">Zero Fee on Top-Ups.</h3>
+            <p class="pillar-desc">Other providers charge 15-20% fee per recharge. We charge $0. AWCC, Roshan, MTN,
+              Etisalat, and Salaam. What you pay is what they receive.</p>
+          </div>
+          <div class="pillar-footer">0% Fee Guarantee</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Coverage & City Selector -->
+  <section class="section" id="cities">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag">Coverage & Speed</span>
+        <h2 class="section-title">Cities We Serve Across Afghanistan</h2>
+        <p class="section-subtitle">Free delivery to all central districts. Remote villages and outskirts carry a small
+          transparent fee shown up-front before you pay.</p>
+      </div>
+
+      <div class="city-coverage-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 800;">Select Destination City</h3>
+            <p id="city-eta-text" style="color: var(--primary); font-weight: 700; margin-top: 0.25rem;">
+              Kabul — Same day (within 2-4 hrs) | $0 Delivery
+            </p>
+          </div>
+          <div class="hero-pill-badge" style="margin-bottom: 0;">
+            <span>Current Selected: <strong id="selected-city-badge">Kabul</strong></span>
+          </div>
+        </div>
+
+        <div class="cities-grid" id="cities-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Packages Store -->
+  <section class="section section-alt" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag">Curated Packages</span>
+        <h2 class="section-title">Care Packages & Groceries Your Family Needs</h2>
+        <p class="section-subtitle">Thoughtfully packed with premium staples, celebratory sweets, and fresh produce.
+          Custom cards included with every box.</p>
+      </div>
+
+      <!-- Catalog Filter Toolbar -->
+      <div class="catalog-toolbar">
+        <div class="category-tabs" id="category-tabs">
+          <button class="tab-btn active" data-category="all">All Items</button>
+          <button class="tab-btn" data-category="grocery">Grocery Boxes</button>
+          <button class="tab-btn" data-category="gift">Gifts & Occasions</button>
+          <button class="tab-btn" data-category="produce">Fresh Fruits</button>
+          <button class="tab-btn" data-category="staple">Bulk Staples</button>
+        </div>
+
+        <div class="search-sort-group">
+          <div class="search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" class="search-input" placeholder="Search flour, rice, cake, gift...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Instant Mobile Top-up Console -->
+  <section class="section" id="topup">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag">Instant Afghan Airtime</span>
+        <h2 class="section-title">Send Mobile Credit with Zero Fees</h2>
+        <p class="section-subtitle">Recharge any Afghan SIM card in seconds. Direct integration with all 5 Afghan mobile
+          telecom networks.</p>
+      </div>
+
+      <div class="topup-card">
+        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem;">1. Select Network Carrier</h3>
+        <div class="carriers-row" id="carriers-container">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem;">2. Enter Afghan Phone Number</h3>
+        <div class="topup-input-wrapper">
+          <div class="phone-prefix">
+            <span>🇦🇫</span>
+            <span>+93</span>
+          </div>
+          <input type="tel" id="topup-phone-input" class="phone-input" placeholder="700 123 456" maxlength="12">
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem;">3. Choose Recharge Amount</h3>
+        <div class="denominations-grid" id="denom-container">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <div
+          style="background: var(--primary-light); border: 1px solid var(--primary-glow); border-radius: var(--radius-md); padding: 1rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 1.5rem;">🛡️</span>
+            <div>
+              <strong style="color: var(--primary); font-size: 0.95rem;">0% Service Fee Guaranteed</strong>
+              <div style="font-size: 0.8rem; color: var(--text-secondary);">100% of airtime is directly transferred to
+                the SIM card.</div>
+            </div>
+          </div>
+          <span style="font-weight: 800; color: var(--primary); font-size: 1.1rem;">Free Processing</span>
+        </div>
+
+        <button id="topup-submit-btn" class="btn btn-primary btn-lg" style="width: 100%;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Add Instant Top-Up to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Package Builder -->
+  <section class="section section-alt" id="custom-builder">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag">Build Your Own</span>
+        <h2 class="section-title">Need Something Specific? Build a Custom Box</h2>
+        <p class="section-subtitle">Pick individual grocery items, set custom quantities, and watch your box weight and
+          pricing update in real time.</p>
+      </div>
+
+      <div class="builder-layout">
+        <div class="builder-items-grid" id="builder-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Sticky Box Summary -->
+        <div class="builder-box-summary">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span style="font-size: 2rem;">📦</span>
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 800;">Your Custom Kharid Box</h3>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">Max capacity: 30 kg per standard care box</p>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.9rem;">
+            <span>Box Weight:</span>
+            <span id="builder-weight-text">0.0 / 30 kg</span>
+          </div>
+          <div class="weight-progress-bar">
+            <div id="builder-weight-progress" class="weight-progress-fill" style="width: 0%;"></div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin: 1.25rem 0;">
+            <span style="font-size: 1rem; font-weight: 700;">Box Total:</span>
+            <span id="builder-cost-text"
+              style="font-size: 1.75rem; font-weight: 800; color: var(--primary);">$0.00</span>
+          </div>
+
+          <button id="builder-pack-btn" class="btn btn-primary" style="width: 100%;">
+            Pack Box & Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Proof Guarantee Showcase -->
+  <section class="section" id="photo-proof">
+    <div class="container">
+      <div class="proof-showcase-grid">
+        <div>
+          <span class="badge-tag">100% Proof Guarantee</span>
+          <h2 class="section-title">You Will See Your Family Holding the Box</h2>
+          <p class="section-subtitle" style="margin-bottom: 1.5rem;">
+            Sending support from abroad should never feel like sending money into a black hole. With Kharid, every
+            delivery is finalized with an authentic, timestamped photo taken directly at your family's doorstep.
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+            <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <span
+                style="background: var(--primary-light); color: var(--primary); border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">✓</span>
+              <span><strong>Delivered straight to their hands:</strong> Couriers phone your family beforehand to
+                coordinate delivery.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <span
+                style="background: var(--primary-light); color: var(--primary); border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">✓</span>
+              <span><strong>High resolution photo sent to your phone:</strong> Receive the photo via WhatsApp and store
+                it in your order history.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <span
+                style="background: var(--primary-light); color: var(--primary); border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">✓</span>
+              <span><strong>Peace of mind for the diaspora:</strong> Over 15,000 doorstep photos successfully delivered
+                across Afghanistan.</span>
+            </li>
+          </ul>
+          <button class="btn btn-primary btn-lg open-tracking-btn">
+            View Live Tracking & Sample Proof
+          </button>
+        </div>
+
+        <div class="proof-card">
+          <img src="/images/proof-delivery.jpg"
+            alt="Doorstep delivery verification with Afghan family receiving their package" loading="lazy">
+          <div class="proof-overlay-meta">
+            <div>
+              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8;">Order
+                #KHD-8842 Verified</div>
+              <div style="font-weight: 700; font-size: 0.95rem;">Kabul, Karte 3 • Today 11:20 AM</div>
+            </div>
+            <span
+              style="background: #22C55E; color: white; font-weight: 800; font-size: 0.75rem; padding: 0.35rem 0.75rem; border-radius: 999px;">DELIVERED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-alt" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag">Community Trust</span>
+        <h2 class="section-title">Loved by Afghan Families Abroad</h2>
+        <p class="section-subtitle">Real words from customers in the USA, Canada, Germany, and the UK who use Kharid to
+          support family back home.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar-card">
+          <div style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 0.75rem;">★★★★★</div>
+          <p class="pillar-desc" style="font-style: italic; font-size: 0.95rem;">
+            “Being in California away from my family is tough, but Kharid makes it feel closer. My mother calls me with
+            tears of joy every time her grocery box arrives with my card.”
+          </p>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem;">
+            <span style="font-size: 1.75rem;">👩‍💼</span>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">Fatima K.</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">San Francisco, USA</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 0.75rem;">★★★★★</div>
+          <p class="pillar-desc" style="font-style: italic; font-size: 0.95rem;">
+            “The delivery photo proof sent directly to my phone is unmatched. Seeing my brother's smile holding the
+            package in Kabul gives me total peace of mind.”
+          </p>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem;">
+            <span style="font-size: 1.75rem;">👨‍💻</span>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">Najib H.</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Berlin, Germany</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 0.75rem;">★★★★★</div>
+          <p class="pillar-desc" style="font-style: italic; font-size: 0.95rem;">
+            “I top-up my parents' AWCC phones every 2 weeks and send a family grocery box once a month. Zero fees, clean
+            pricing, and customer service is always on WhatsApp.”
+          </p>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem;">
+            <span style="font-size: 1.75rem;">👩‍⚕️</span>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">Sara M.</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Toronto, Canada</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 0.75rem;">★★★★★</div>
+          <p class="pillar-desc" style="font-style: italic; font-size: 0.95rem;">
+            “Ordered a Birthday Joy cake and flowers for my sister in Mazar-i-Sharif. Placed order at 10 AM, courier
+            delivered at 2:15 PM with fresh candles and flowers!”
+          </p>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem;">
+            <span style="font-size: 1.75rem;">👨‍💼</span>
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">Ahmad W.</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">London, UK</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about ordering, currencies, delivery proof, and
+          payments.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-question">
+            <span>Is Kharid available for customers living outside of Afghanistan?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, absolutely! Kharid is specifically created for the Afghan diaspora living in the United States,
+              Canada, Europe, Australia, and worldwide to easily send essentials, groceries, gifts, and mobile recharge
+              to family members in Afghanistan.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Which cities in Afghanistan can you deliver to today?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We deliver same-day to Kabul, Mazar-i-Sharif, Herat, Jalalabad, and Panjshir. Kandahar is scheduled next
+              as our fulfillment network expands.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What does delivery cost?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Delivery to the city center is 100% free on every order. For addresses located in outer suburbs or
+              distant villages, a modest transparent fee ($3–$5) is calculated and displayed clearly before you pay —
+              never added secretly after.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I pay, and in which currency?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can pay using any debit or credit card issued anywhere in the world (Visa, Mastercard, American
+              Express), as well as Apple Pay, Google Pay, and PayPal. You can view prices in USD, EUR, GBP, CAD, or AFN.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I know my order arrived safely?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every single order concludes with an authentic photo taken at the doorstep showing your family receiving
+              the sealed box. This photo proof is immediately sent to your phone and saved in your order tracking
+              dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Shopping Cart">
+    <div class="modal-header">
+      <div style="display: flex; align-items: center; gap: 0.65rem;">
+        <span style="font-size: 1.5rem;">🛍️</span>
+        <h2 style="font-size: 1.25rem; font-weight: 800;" data-i18n="cartTitle">Your Care Cart</h2>
+      </div>
+      <button id="cart-close-btn" class="modal-close-btn" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="cart-items-list" id="cart-items-container">
+      <!-- Items populated by JavaScript -->
+    </div>
+
+    <div class="cart-footer">
+      <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.5rem;">
+        <span>Subtotal:</span>
+        <strong id="cart-subtotal">$0.00</strong>
+      </div>
+      <div
+        style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--primary);">
+        <span>City Center Delivery:</span>
+        <strong id="cart-delivery-fee">FREE</strong>
+      </div>
+      <div
+        style="display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 800; border-top: 1px solid var(--border-subtle); padding-top: 0.75rem; margin-bottom: 1.25rem;">
+        <span>Total:</span>
+        <span id="cart-total" style="color: var(--primary);">$0.00</span>
+      </div>
+
+      <button id="checkout-btn" class="btn btn-primary" style="width: 100%;" data-i18n="checkoutBtn">
+        Proceed to Delivery & Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 style="font-size: 1.25rem; font-weight: 800;">Delivery & Recipient Details</h2>
+        <button class="modal-close-btn close-checkout" aria-label="Close Checkout">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="checkout-form">
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem;">Recipient Full
+              Name in Afghanistan *</label>
+            <input type="text" id="c-recipient-name" required class="phone-input" style="padding-left: 1rem;"
+              placeholder="e.g. Haji Mohammad / Zahra Jan">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div>
+              <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem;">Destination
+                City *</label>
+              <select id="c-city" class="dropdown-select" style="width: 100%; padding: 0.75rem;">
+                <option value="Kabul">Kabul</option>
+                <option value="Mazar-i-Sharif">Mazar-i-Sharif</option>
+                <option value="Herat">Herat</option>
+                <option value="Jalalabad">Jalalabad</option>
+                <option value="Panjshir">Panjshir</option>
+              </select>
+            </div>
+            <div>
+              <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem;">Recipient
+                Phone (+93) *</label>
+              <input type="tel" id="c-phone" required class="phone-input" style="padding-left: 1rem;"
+                placeholder="0700 123 456">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem;">Neighborhood &
+              Landmark (Kabul / Mazar Address) *</label>
+            <textarea id="c-address" required class="phone-input"
+              style="padding: 0.75rem 1rem; height: 80px; resize: none;"
+              placeholder="e.g. Karte 3, Street 4, near Habibia High School, Blue Gate"></textarea>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem;">Personal Message
+              for Greeting Card (Printed inside box)</label>
+            <input type="text" id="c-note" class="phone-input" style="padding-left: 1rem;"
+              placeholder="e.g. Dearest Mom & Dad, with warm love from California.">
+          </div>
+
+          <!-- Order Summary in Checkout -->
+          <div
+            style="background: var(--bg-muted); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem;">
+            <h4 style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem;">Order Review</h4>
+            <div id="checkout-summary-list"></div>
+            <div
+              style="display: flex; justify-content: space-between; font-weight: 800; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; margin-top: 0.5rem;">
+              <span>Total to Pay:</span>
+              <span id="checkout-total-amount" style="color: var(--primary);">$0.00</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            Confirm & Send Care Package
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div id="success-modal" class="modal-overlay">
+    <div class="modal-content" style="text-align: center; max-width: 480px;">
+      <div class="modal-body" style="padding: 2.5rem 2rem;">
+        <div
+          style="width: 72px; height: 72px; background: var(--primary-light); color: var(--primary); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 1.25rem;">
+          ✓
+        </div>
+        <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.5rem;">Order Confirmed!</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+          Your care package has been sent to our Afghanistan local depot for same-day packing and dispatch.
+        </p>
+
+        <div
+          style="background: var(--bg-muted); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.75rem;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Your Tracking Code</div>
+          <div id="success-order-id"
+            style="font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: 0.05em; margin-top: 0.25rem;">
+            KHD-8842</div>
+        </div>
+
+        <button class="btn btn-primary close-success" style="width: 100%;">
+          Done & Return to Store
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Order Tracking Modal -->
+  <div id="tracking-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 style="font-size: 1.25rem; font-weight: 800;">Track Your Delivery</h2>
+        <button class="modal-close-btn close-tracking" aria-label="Close Tracking">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          Enter your Kharid order number (e.g. <strong>KHD-8842</strong> or <strong>KHD-9210</strong>) to view live
+          courier status and doorstep photo proof.
+        </p>
+        <div style="display: flex; gap: 0.75rem;">
+          <input type="text" id="tracking-input" class="phone-input" style="padding-left: 1rem;" placeholder="KHD-8842">
+          <button id="tracking-submit-btn" class="btn btn-primary">Track</button>
+        </div>
+
+        <div id="tracking-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="color: white; margin-bottom: 1rem;">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <span>Kharid</span>
+          </div>
+          <p style="color: #9CA3AF; font-size: 0.9rem; line-height: 1.7; max-width: 320px; margin-bottom: 1rem;">
+            Built for Afghan families everywhere. Send groceries, gifts, care packages, and mobile top-ups home with
+            same-day delivery and photo proof.
+          </p>
+          <div style="font-size: 0.85rem; color: #9CA3AF;">
+            WhatsApp Support: <a href="https://wa.me/13079981368" style="color: var(--primary); font-weight: 700;">+1
+              (307) 998-1368</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <div class="footer-links">
+            <a href="#packages">Grocery Boxes</a>
+            <a href="#packages">Occasion Gifts</a>
+            <a href="#topup">Mobile Top-Up</a>
+            <a href="#custom-builder">Custom Package</a>
+            <a href="#photo-proof">Photo Proof</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Cities Served</h4>
+          <div class="footer-links">
+            <a href="#cities">Kabul (کابل)</a>
+            <a href="#cities">Mazar-i-Sharif (مزار شریف)</a>
+            <a href="#cities">Herat (هرات)</a>
+            <a href="#cities">Jalalabad (جلال‌آباد)</a>
+            <a href="#cities">Panjshir (پنجشیر)</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get the App</h4>
+          <p style="font-size: 0.85rem; color: #9CA3AF; margin-bottom: 1rem;">
+            Download Kharid for iOS and Android. Reorder groceries in seconds.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <a href="https://apps.apple.com/app/id6762475377" target="_blank" rel="noopener noreferrer"
+              class="btn btn-secondary btn-sm" style="background: #18221D; color: white; border-color: #283730;">
+               Download on App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=af.kharid.app" target="_blank"
+              rel="noopener noreferrer" class="btn btn-secondary btn-sm"
+              style="background: #18221D; color: white; border-color: #283730;">
+              ▶ Get it on Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Kharid. Built with love for Afghan families everywhere.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="mailto:support@kharid.af">support@kharid.af</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Main JavaScript App -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+
+</html>
