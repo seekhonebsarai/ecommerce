@@ -76,6 +76,7 @@ export default function Navbar() {
                 onChange={(e) => setCurrency(e.target.value)}
                 className="compact-select"
                 aria-label="Select Currency"
+                suppressHydrationWarning
               >
                 <option value="USD">USD ($)</option>
                 <option value="EUR">EUR (€)</option>
@@ -92,6 +93,7 @@ export default function Navbar() {
                 onChange={(e) => setLang(e.target.value)}
                 className="compact-select"
                 aria-label="Select Language"
+                suppressHydrationWarning
               >
                 <option value="en">EN</option>
                 <option value="fa">فارسی</option>
@@ -261,6 +263,7 @@ export default function Navbar() {
                   value={currency}
                   onChange={(e) => setCurrency(e.target.value)}
                   className="compact-select mobile-select-input"
+                  suppressHydrationWarning
                 >
                   <option value="USD">USD ($)</option>
                   <option value="EUR">EUR (€)</option>
@@ -275,6 +278,7 @@ export default function Navbar() {
                   value={lang}
                   onChange={(e) => setLang(e.target.value)}
                   className="compact-select mobile-select-input"
+                  suppressHydrationWarning
                 >
                   <option value="en">English (EN)</option>
                   <option value="fa">فارسی (Dari)</option>

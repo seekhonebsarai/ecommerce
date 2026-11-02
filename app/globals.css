@@ -3891,7 +3891,7 @@ html.dark .comp-badge.old {
 }
 
 /* ==========================================================================
-   DEDICATED LOGIN PAGE STYLES
+   DEDICATED LOGIN PAGE STYLES (FULLY RESPONSIVE)
    ========================================================================== */
 
 .login-pending-alert-banner {
@@ -3903,6 +3903,8 @@ html.dark .comp-badge.old {
   align-items: center;
   gap: 1.25rem;
   margin-bottom: 2rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .login-pending-alert-banner strong {
@@ -3915,10 +3917,12 @@ html.dark .comp-badge.old {
   font-size: 0.88rem;
   color: var(--text-secondary);
   margin-top: 0.2rem;
+  line-height: 1.45;
 }
 
 .pending-icon {
   font-size: 2.25rem;
+  flex-shrink: 0;
 }
 
 .login-grid-card {
@@ -3930,13 +3934,25 @@ html.dark .comp-badge.old {
   border-radius: var(--radius-xl);
   padding: 2.5rem;
   box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 860px) {
-  .login-grid-card {
-    grid-template-columns: 1fr;
-    padding: 1.75rem;
-  }
+.login-form-side {
+  min-width: 0;
+  width: 100%;
+}
+
+.login-benefits-side {
+  min-width: 0;
+  width: 100%;
+  background: var(--bg-muted);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .login-header-group {
@@ -3949,12 +3965,15 @@ html.dark .comp-badge.old {
   color: var(--text-primary);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .login-subline {
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.5;
+  word-break: break-word;
 }
 
 .demo-login-box {
@@ -3963,6 +3982,8 @@ html.dark .comp-badge.old {
   border-radius: var(--radius-lg);
   padding: 1.25rem;
   margin-bottom: 1.75rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .demo-badge-row {
@@ -3975,6 +3996,34 @@ html.dark .comp-badge.old {
   text-transform: uppercase;
   color: var(--secondary-hover);
   letter-spacing: 0.05em;
+  display: block;
+}
+
+.login-demo-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.35;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.85rem 1.25rem;
+}
+
+.demo-btn-main {
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.demo-btn-sub {
+  font-size: 0.84rem;
+  opacity: 0.88;
+  font-weight: 600;
 }
 
 .or-divider {
@@ -4004,6 +4053,8 @@ html.dark .comp-badge.old {
   border-radius: var(--radius-pill);
   padding: 4px;
   margin-bottom: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .login-tab-btn {
@@ -4015,6 +4066,7 @@ html.dark .comp-badge.old {
   font-weight: 700;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .login-tab-btn.active {
@@ -4027,15 +4079,41 @@ html.dark .comp-badge.old {
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Right Benefits Column */
-.login-benefits-side {
-  background: var(--bg-muted);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
+.login-submit-btn {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.35;
+  margin-top: 0.75rem;
+  padding: 0.95rem 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-switch-prompt {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.login-switch-inline-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.login-switch-inline-link:hover {
+  color: var(--primary-hover);
 }
 
 .benefits-side-title {
@@ -4062,6 +4140,8 @@ html.dark .comp-badge.old {
 .benefit-icon-badge {
   font-size: 1.5rem;
   min-width: 32px;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .benefits-side-list strong {
@@ -4086,6 +4166,189 @@ html.dark .comp-badge.old {
   gap: 0.5rem;
   font-size: 0.8rem;
   color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.secure-lock-icon {
+  flex-shrink: 0;
+}
+
+/* Tablet Media Query (860px and below) */
+@media (max-width: 860px) {
+  .login-grid-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+/* Mobile Media Query (640px and below) */
+@media (max-width: 640px) {
+  .page-wrapper-padding {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .login-grid-card {
+    padding: 1.35rem 1.1rem;
+    border-radius: var(--radius-lg);
+    gap: 1.5rem;
+  }
+
+  .login-header-group {
+    margin-bottom: 1.15rem;
+  }
+
+  .login-title {
+    font-size: 1.35rem;
+  }
+
+  .login-subline {
+    font-size: 0.85rem;
+  }
+
+  .demo-login-box {
+    padding: 0.9rem 0.85rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .login-demo-btn {
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    padding: 0.75rem 0.85rem !important;
+    font-size: 0.95rem;
+  }
+
+  .demo-btn-main {
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+
+  .demo-btn-sub {
+    font-size: 0.78rem;
+    white-space: normal;
+  }
+
+  .or-divider {
+    margin: 1.15rem 0;
+    font-size: 0.7rem;
+  }
+
+  .or-divider span {
+    padding: 0 0.5rem;
+  }
+
+  .login-tab-switch {
+    margin-bottom: 1.25rem;
+    padding: 3px;
+  }
+
+  .login-tab-btn {
+    padding: 0.55rem 0.4rem;
+    font-size: 0.84rem;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-form-body {
+    gap: 1rem;
+  }
+
+  .auth-form-body .text-input-field,
+  .auth-form-body .select-input-field {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+    padding: 0.75rem 0.85rem;
+    min-height: 46px;
+    box-sizing: border-box;
+  }
+
+  .login-submit-btn {
+    padding: 0.85rem 1rem !important;
+    font-size: 0.95rem;
+  }
+
+  .login-benefits-side {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .benefits-side-title {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefits-side-list {
+    gap: 1rem;
+  }
+
+  .benefit-icon-badge {
+    font-size: 1.25rem;
+    min-width: 26px;
+  }
+
+  .benefits-side-list strong {
+    font-size: 0.88rem;
+  }
+
+  .benefits-side-list p {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .login-secure-footer {
+    margin-top: 1.25rem;
+    padding-top: 0.85rem;
+    font-size: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .login-pending-alert-banner {
+    padding: 0.9rem 1rem;
+    gap: 0.75rem;
+    align-items: flex-start;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.25rem;
+  }
+
+  .pending-icon {
+    font-size: 1.75rem;
+  }
+
+  .login-pending-alert-banner strong {
+    font-size: 0.9rem;
+  }
+
+  .login-pending-alert-banner p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Phones (380px and below) */
+@media (max-width: 380px) {
+  .login-grid-card {
+    padding: 1rem 0.75rem;
+    border-radius: var(--radius-md);
+  }
+
+  .login-title {
+    font-size: 1.22rem;
+  }
+
+  .login-tab-btn {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .demo-login-box {
+    padding: 0.75rem 0.65rem;
+  }
+
+  .login-benefits-side {
+    padding: 1rem 0.75rem;
+  }
 }
 
 /* ==========================================================================

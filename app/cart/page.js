@@ -169,6 +169,7 @@ export default function CartPage() {
                         setSelectedCity(found);
                       }}
                       className="select-input-field"
+                      suppressHydrationWarning
                     >
                       {CITIES.map((c) => (
                         <option key={c.id} value={c.name}>
@@ -187,6 +188,7 @@ export default function CartPage() {
                       value={deliveryType}
                       onChange={(e) => setDeliveryType(e.target.value)}
                       className="select-input-field"
+                      suppressHydrationWarning
                     >
                       <option value="same-day">Same-Day Express (Before 2:00 PM AFT)</option>
                       <option value="tomorrow">Next Morning Dispatch (9:00 AM - 1:00 PM)</option>

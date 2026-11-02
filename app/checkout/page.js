@@ -117,7 +117,7 @@ export default function CheckoutPage() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmitOrder}>
+        <form onSubmit={handleSubmitOrder} suppressHydrationWarning>
           <div className="cart-two-column-layout">
             {/* Left: Detailed Checkout Form */}
             <div className="cart-main-items-column">
@@ -140,6 +140,7 @@ export default function CheckoutPage() {
                     onChange={(e) => setRecipientName(e.target.value)}
                     placeholder="e.g. Haji Abdul Qader Jan / Zahra Begum"
                     className="text-input-field"
+                    suppressHydrationWarning
                   />
                 </div>
 
@@ -150,6 +151,7 @@ export default function CheckoutPage() {
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
                       className="select-input-field"
+                      suppressHydrationWarning
                     >
                       {CITIES.map((c) => (
                         <option key={c.id} value={c.name}>
@@ -245,6 +247,7 @@ export default function CheckoutPage() {
                       value={senderCountry}
                       onChange={(e) => setSenderCountry(e.target.value)}
                       className="select-input-field"
+                      suppressHydrationWarning
                     >
                       <option value="United States">United States 🇺🇸</option>
                       <option value="Canada">Canada 🇨🇦</option>

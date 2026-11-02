@@ -48,7 +48,7 @@ function LoginContent() {
 
   return (
     <div className="page-wrapper-padding">
-      <div className="container" style={{ maxWidth: '960px' }}>
+      <div className="container" style={{ maxWidth: '960px', width: '100%', boxSizing: 'border-box' }}>
         {/* Pending Item Banner */}
         {pendingCartItem && (
           <div className="login-pending-alert-banner">
@@ -81,11 +81,11 @@ function LoginContent() {
               <button
                 type="button"
                 onClick={handleDemoLogin}
-                className="btn btn-secondary btn-lg full-width"
-                style={{ fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem' }}
+                className="btn btn-secondary btn-lg full-width login-demo-btn"
+                aria-label="1-Click Demo Login as Ahmad Farhad"
               >
-                <span>🚀 1-Click Demo Login</span>
-                <span style={{ fontSize: '0.85rem', opacity: 0.85 }}>(Ahmad Farhad - Diaspora Member)</span>
+                <span className="demo-btn-main">🚀 1-Click Demo Login</span>
+                <span className="demo-btn-sub">(Ahmad Farhad · Diaspora Member)</span>
               </button>
             </div>
 
@@ -94,9 +94,11 @@ function LoginContent() {
             </div>
 
             {/* Tab switch */}
-            <div className="login-tab-switch">
+            <div className="login-tab-switch" role="tablist" aria-label="Sign In or Create Account">
               <button
                 type="button"
+                role="tab"
+                aria-selected={mode === 'signin'}
                 onClick={() => setMode('signin')}
                 className={`login-tab-btn ${mode === 'signin' ? 'active' : ''}`}
               >
@@ -104,6 +106,8 @@ function LoginContent() {
               </button>
               <button
                 type="button"
+                role="tab"
+                aria-selected={mode === 'signup'}
                 onClick={() => setMode('signup')}
                 className={`login-tab-btn ${mode === 'signup' ? 'active' : ''}`}
               >
@@ -111,27 +115,33 @@ function LoginContent() {
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="auth-form-body">
+            <form onSubmit={handleSubmit} className="auth-form-body" suppressHydrationWarning>
               {mode === 'signup' && (
                 <>
                   <div className="form-field-group">
-                    <label className="form-label">Full Name *</label>
+                    <label className="form-label" htmlFor="register-fullname">Full Name *</label>
                     <input
+                      id="register-fullname"
                       type="text"
                       required
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Zahra Farhad"
                       className="text-input-field"
+                      autoComplete="name"
+                      suppressHydrationWarning
                     />
                   </div>
 
                   <div className="form-field-group">
-                    <label className="form-label">Country Where You Reside *</label>
+                    <label className="form-label" htmlFor="register-country">Country Where You Reside *</label>
                     <select
+                      id="register-country"
                       value={country}
                       onChange={(e) => setCountry(e.target.value)}
                       className="select-input-field"
+                      autoComplete="country-name"
+                      suppressHydrationWarning
                     >
                       <option value="United States">United States 🇺🇸</option>
                       <option value="Canada">Canada 🇨🇦</option>
@@ -145,36 +155,68 @@ function LoginContent() {
               )}
 
               <div className="form-field-group">
-                <label className="form-label">Email Address *</label>
+                <label className="form-label" htmlFor="auth-email">Email Address *</label>
                 <input
+                  id="auth-email"
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@example.com"
                   className="text-input-field"
+                  autoComplete="email"
+                  inputMode="email"
+                  suppressHydrationWarning
                 />
               </div>
 
               <div className="form-field-group">
-                <label className="form-label">Password *</label>
+                <label className="form-label" htmlFor="auth-password">Password *</label>
                 <input
+                  id="auth-password"
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   className="text-input-field"
+                  autoComplete={mode === 'signin' ? 'current-password' : 'new-password'}
+                  suppressHydrationWarning
                 />
               </div>
 
               <button
                 type="submit"
-                className="btn btn-primary btn-lg full-width"
-                style={{ marginTop: '0.75rem', padding: '0.95rem' }}
+                className="btn btn-primary btn-lg full-width login-submit-btn"
               >
                 {mode === 'signin' ? 'Sign In & View Care Box →' : 'Create Account & Continue →'}
               </button>
+
+              <div className="login-switch-prompt">
+                {mode === 'signin' ? (
+                  <span>
+                    Don't have an account?{' '}
+                    <button
+                      type="button"
+                      onClick={() => setMode('signup')}
+                      className="login-switch-inline-link"
+                    >
+                      Create one now
+                    </button>
+                  </span>
+                ) : (
+                  <span>
+                    Already have an account?{' '}
+                    <button
+                      type="button"
+                      onClick={() => setMode('signin')}
+                      className="login-switch-inline-link"
+                    >
+                      Sign in
+                    </button>
+                  </span>
+                )}
+              </div>
             </form>
           </div>
 
